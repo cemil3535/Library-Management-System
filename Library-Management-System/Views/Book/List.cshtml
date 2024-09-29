@@ -1,31 +1,37 @@
 ﻿
 @model List<BookViewModel>
 
-    <h1 class="text-center mt-5">Kitap Listeleme Sayfasi</h1>
+    <div class="alert alert-info fw-bold">
+
+       Hos Geldin - @User.Claims.FirstOrDefault( x =>x.Type == "email")?.Value
+        @User.Claims.FirstOrDefault( x =>x.Type == "id")?.Value
+
+    </div>
+
+    @if(@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value is not null)
+    {
+    <h1 class="text-center mt-5">KİTAPLAR</h1>
 
     <a asp-controller="Book" asp-action="Create" class="btn btn-success fw-bold mb-3 mt-3">Yeni Kitap Ekle</a>
 
     <div class="mt-5">
 
         @foreach (var book in Model)
-    {
-        <div class="card">
-            <div class="card-header fw-bold">
+        {
+            <div class="card">
+                <div class="card-header fw-bold">
                 @book.Title
             </div>
             <div class="card-body">
-                @*<h15 class="card-title">Special title treatment</h15>*@
-                <p class="card-text">Yazar: @book.AuthorName</p>
-                <p class="card-text">Tur: @book.Genre</p>               
-                <p class="card-text">Basim Yili: @book.PublishDate</p>
-                <p class="card-text">ISBN No: @book.ISBN</p>
-                <p class="card-text">Copya Sayisi: @book.CopiesAvailable</p>
-                <a class="btn btn-warning">Ayrintilar</a>
-                <a asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id" class="btn btn-primary">Duzenle</a>
+               
+                <a asp-controller="Book" asp-action="Detail" asp-route-id="@book.Id" class="btn btn-warning">Ayrıntılar</a>
+                <a asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id" class="btn btn-primary">Düzenle</a>
                 <a asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger">Sil</a>
+
             </div>
         </div>
     }
 
     </div>
 
+}

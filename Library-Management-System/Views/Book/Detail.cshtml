@@ -1,0 +1,32 @@
+﻿@model BookViewModel
+
+
+
+<h1 class="text-center mt-5">KİTAP BİLGİSİ</h1>
+<input type="hidden" asp-for="Id" />
+
+<div class="mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>KİTAP İSMİ</th>
+                <th>YAZARI</th>
+                <th>TÜRÜ</th>
+                <th>BASIM YILI</th>
+                <th>ISBN NO</th>
+                <th>KOPYA SAYISI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Title</td>
+                <td>@Model.AuthorName</td>
+                <td>@Model.Genre</td>
+                <td>@Model.PublishDate.ToString("dd/MM/yyyy")</td>
+                <td>@Model.ISBN</td>
+                <td>@Model.CopiesAvailable</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

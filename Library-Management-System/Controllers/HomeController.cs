@@ -7,7 +7,9 @@ namespace Library_Management_System.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("List", "Book");
+                   
+            return View("Home");
+            
         }
     }
 }

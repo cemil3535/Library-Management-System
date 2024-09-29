@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
+
+
 namespace Library_Management_System.Controllers
 {
     public class AuthController : Controller
     {
-        public static List<UserEntity> _user = new List<UserEntity>()
+        public static List<UserEntity> _users = new List<UserEntity>()
         {
-            new UserEntity{ Id = 1, FullName = "Cemil", Email = "cemil@gmail.com", Password = "1223", PhoneNumber = "124353636", JoinDate= new DateTime(2024, 10, 8, 0, 0, 0)}
+            new UserEntity{ Id = 1, FullName = "cemil", Email = "", Password = "", PhoneNumber = "124353636", JoinDate= new DateTime(2024, 10, 8, 0, 0, 0)}
         };
 
 
+        // Encryption
         private readonly IDataProtector _dataProtector;
 
         public AuthController(IDataProtectionProvider dataProtectionProvider)
@@ -23,6 +26,8 @@ namespace Library_Management_System.Controllers
             _dataProtector = dataProtectionProvider.CreateProtector("security");  
         }
 
+
+        // User registration procedures
 
         [HttpGet]
         public IActionResult SignUp()
@@ -39,7 +44,7 @@ namespace Library_Management_System.Controllers
                 return View(formdata);
             }
 
-            var user = _user.FirstOrDefault(x => x.Email.ToLower() == formdata.Email.ToLower());
+            var user = _users.FirstOrDefault(x => x.Email.ToLower() == formdata.Email.ToLower());
             if (user is not null)
             {
                 ViewBag.Error = "Kullanici Mevcut";
@@ -48,15 +53,18 @@ namespace Library_Management_System.Controllers
 
             var newUser = new UserEntity()
             {
-                Id = _user.Max(x => x.Id) + 1,
+                Id = _users.Max(x => x.Id) + 1,
                 Email = formdata.Email.ToLower(),
                 Password = _dataProtector.Protect(formdata.Password)
             };
 
-            _user.Add(newUser);
+            _users.Add(newUser);
 
-            return RedirectToAction("Index", "Home");
+            
+            return RedirectToAction("Login");
         }
+
+        // User login procedures
 
         [HttpGet]
         public IActionResult Login() 
@@ -64,10 +72,11 @@ namespace Library_Management_System.Controllers
             return View();
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel formData)
         {
-            var user = _user.FirstOrDefault(x => x.Email.ToLower() == formData.Email.ToLower());
+            var user = _users.FirstOrDefault(x => x.Email.ToLower() == formData.Email.ToLower());
 
             if (user is null)
             {
@@ -82,10 +91,11 @@ namespace Library_Management_System.Controllers
             {
                 var claims = new List<Claim>();
 
+                
                 claims.Add(new Claim("email", user.Email));
                 claims.Add(new Claim("id", user.Id.ToString()));
 
-                var claimIdentity = new ClaimsIdentity(claims, Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme);
+                var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 var autProperties = new AuthenticationProperties
                 {
@@ -103,7 +113,14 @@ namespace Library_Management_System.Controllers
                 return View(formData);
             }
 
+            return RedirectToAction("List", "Book");
+        }
 
+        // User logout operations
+
+        public async Task<IActionResult> SignOut()
+        {
+            await HttpContext.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
         }

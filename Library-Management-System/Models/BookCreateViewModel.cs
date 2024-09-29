@@ -19,9 +19,7 @@ namespace Library_Management_System.Models
         [Required(ErrorMessage = "Kopya Sayisi Bilgisini Doldurmak Zorunludur.Lutfen Sayi Olarak Giriniz")]
         public int CopiesAvailable { get; set; }
 
-
         public DateTime PublishDate { get; set; }
-
 
         public int AuthorId { get; set; }
 

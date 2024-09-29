@@ -1,0 +1,36 @@
+﻿@model List<AuthorViewModel>
+<div class="alert alert-info fw-bold">
+
+       Hos Geldin - @User.Claims.FirstOrDefault( x =>x.Type == "email")?.Value
+        @User.Claims.FirstOrDefault( x =>x.Type == "id")?.Value
+        
+    </div>
+
+    @if(@User.Claims.FirstOrDefault(x => x.Type == "id")?.Value is not null)
+    {
+
+    <h1 class="text-center mt-5">YAZARLAR</h1>
+
+    <a asp-controller="Author" asp-action="AuthorCreate" class="btn btn-success fw-bold mb-3 mt-3">Yeni Yazar Ekle</a>
+
+    <div class="mt-5">
+
+        @foreach (var author in Model)
+    {
+        <div class="card">
+            
+            <div class="card-body">
+                
+                <p class="card-text">Yazar Adı: @author.FirstName</p>
+                <p class="card-text">Yazar Soyadı: @author.LastName</p>
+                
+                <a asp-controller="Author" asp-action="AuthorEdit" asp-route-id="@author.Id" class="btn btn-primary">Düzenle</a>          
+                <a asp-controller="Author" asp-action="AuthorDetail" asp-route-id="@author.Id" class="btn btn-warning">Ayrıntılar</a>
+                    <a asp-controller="Author" asp-action="AuthorDelete" asp-route-id="@author.Id" class="btn btn-danger">Sil</a>
+            </div>
+        </div>
+    }
+
+    </div>
+
+}

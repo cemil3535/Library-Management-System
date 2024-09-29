@@ -1,9 +1,18 @@
 ﻿
-<nav class="navbar bg-warning">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.patika.dev/patikaplus">PATİKA PLUS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav" >
+                <a class="nav-link active" aria-current="page" asp-controller="/" asp-action="Index">Ana Sayfa</a>
+                <a class ="nav-link" asp-controller="Book" asp-action="List">KİTAPLAR</a>
+                <a class="nav-link" asp-controller="Author" asp-action="AuthorList">YAZARLAR</a>
 
-        <a class="navbar-brand fw-bold" href="/">Navbar</a>
-        <a class="navbar-brand fw-bold" asp-controller="Auth" asp-action="SignUp">Kullanici Girisi</a>
-        
+                
+            </div>
+        </div>
     </div>
 </nav>

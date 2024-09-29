@@ -7,11 +7,16 @@
         <div class="card">
 
             <div class="card-header fw-bold fs-4 text-center">
-                Sign-Up Form
+                Kullanıcı Kayıt
             </div>
 
             <div class="card-body">
-
+                @if (ViewBag.Error is not null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Error
+                    </div>
+                }
                 <form method="post" asp-controller="Auth" asp-action="SignUp">
 
 
@@ -35,19 +40,10 @@
                     <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
                 </form>
 
-
-
-
             </div>
-
-
-
-
 
         </div>
 
-
     </div>
-
 
 </div>

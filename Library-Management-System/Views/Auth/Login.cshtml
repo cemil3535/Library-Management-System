@@ -1,4 +1,6 @@
-﻿@model LoginViewModel
+﻿
+@model LoginViewModel
+
 
 <div class="row offset-3">
 
@@ -10,10 +12,11 @@
         <div class="card">
 
             <div class="card-header fw-bold fs-4 text-center">
-                Login Form
+                Kullanıcı Girişi
             </div>
 
             <div class="card-body">
+               
                 <form method="post" asp-controller="Auth" asp-action="Login">
 
                     <div class="form-floating mt-2">

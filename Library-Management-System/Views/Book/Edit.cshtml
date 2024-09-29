@@ -1,34 +1,37 @@
 ﻿@model BookEditViewModal
 
 
-<h3>Kitap Duzenleme Sayfasi</h3>
+<h1 class="text-center mt-5">Kitap Düzenle</h1>
+
+
 
 <form method="post" asp-controller="Book" asp-action="Edit">
 
    <input type="hidden" asp-for="Id" />
 
     <div>
-        <label>Kitap Adi</label>
+        <label>Kitap Adı</label>
         <input asp-for="Title" class="form-control" type="text" />
         <span asp-validation-for="Title" class=" text-danger mt-2 fw-bold"></span>
     </div>
 
     <div>
-        <label>Yazar Adi</label>
+        <label>Yazar Adı</label>
         <select asp-for="AuthorId" asp-items="@(new SelectList(ViewBag.Authors, "Id","FullName"))" class="form-control">
+            <option value="">Bir yazar seçin</option>
         </select>
         <span asp-validation-for="AuthorId" class=" text-danger mt-2 fw-bold"></span>
     </div>
 
     <div>
-        <label>Kitap Turu</label>
+        <label>Kitap Türü</label>
         <input asp-for="Genre" class="form-control" type="text" />
         <span asp-validation-for="Genre" class=" text-danger mt-2 fw-bold"></span>
     </div>
 
     <div>
 
-        <label>Baski Yili</label>
+        <label>Baskı Yılı</label>
         <input asp-for="PublishDate" class="form-control" type="date" />
         <span asp-validation-for="PublishDate" class=" text-danger mt-2 fw-bold"></span>
     </div>
@@ -40,16 +43,10 @@
     </div>
 
     <div>
-        <label>Kopya Sayisi</label>
+        <label>Kopya Sayısı</label>
         <input asp-for="CopiesAvailable" class="form-control" type="number" />
         <span asp-validation-for="CopiesAvailable" class=" text-danger mt-2 fw-bold"></span>
     </div>
-
-    @*<div>
-    <label>Icerik</label>  @*Tur, basim yili gibi seyleri toplu icerik yenirien viewde duzenle tek satir olarak al
-    <textarea rows="4" class="form-control"></textarea>
-    <span class="text-danger mt-2 fw-bold"></span>
-    </div>*@
 
     <button type="submit" class="btn btn-success mt-2">Kaydet</button>
 </form>

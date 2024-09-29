@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices;
+
 
 namespace Library_Management_System.Models
 {
@@ -22,8 +22,7 @@ namespace Library_Management_System.Models
 
         [Required(ErrorMessage = "Kopya Sayisi Bilgisini Doldurmak Zorunludur.Lutfen Sayi Olarak Giriniz")]
         public int CopiesAvailable { get; set; }
-
-       
+     
         public DateTime PublishDate { get; set; }
 
         public bool IsDeleted { get; set; }
