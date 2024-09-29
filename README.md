@@ -1,6 +1,10 @@
 # Library-Management-System
 
-About The Project
+### About The Project
+
+This Library program starts with the user registering with email and password and then entering the program with the information registered.
+
+The user can list the books, view the details of the books, edit and delete the books. At the same time, the list of the authors of the library, edit them, view their details and delete the author. It has a user-friendly design.
 
 <img width="954" alt="1" src="https://github.com/user-attachments/assets/a4d8ebea-98e4-40bc-9b38-579cae304ecd">
 <img width="954" alt="2" src="https://github.com/user-attachments/assets/bc626b8b-326b-436b-b74b-a23895e68b5b">
@@ -14,3 +18,8 @@ About The Project
 <img width="954" alt="10" src="https://github.com/user-attachments/assets/b0aab317-55c7-4ab0-bd68-caacc3d10aae">
 <img width="954" alt="11" src="https://github.com/user-attachments/assets/282e94a0-ee52-4b7b-8116-216081980be7">
 
+### Technology Used
+- C#
+- Asp.Net Core MVC
+- HTML
+- BootStrap
