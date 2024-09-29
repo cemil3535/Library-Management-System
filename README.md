@@ -4,7 +4,31 @@
 
 This Library program starts with the user registering with email and password and then entering the program with the information registered.
 
-The user can list the books, view the details of the books, edit and delete the books. At the same time, the list of the authors of the library, edit them, view their details and delete the author. 
+This project is an ASP.NET Core MVC application designed as a library management system. The project aims to create a comprehensive system to manage book, author and user operations.
+
+The project requirements can be summarized as follows:
+
+Creating Model: The project includes creating book, author and user models. Each model is defined with its relevant fields and properties.
+Creating ViewModel: The project includes creating view models that show book, author and user details. These view models will be used for relevant pages.
+Creating Controller: The project includes creating controllers to manage book, author and user operations. Each controller will have relevant action methods.
+Creating View: The project includes creating book, author and user pages. Each page will contain the relevant view.
+Program.cs Configuration: The project includes adding MVC services, using wwwroot, routing configuration and default routing.
+The project will be able to perform the following operations:
+
+Show book list
+Show book details
+Add new book
+Edit book
+Delete book
+Show author list
+Show author details
+Add new author
+Edit author
+Delete author
+User registration
+User login
+Show user information
+In general, this project is designed as a library management system and will be able to perform the related operations. 
 
 It has a user-friendly design.
 
