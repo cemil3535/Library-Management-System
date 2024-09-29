@@ -13,8 +13,8 @@ It has a user-friendly design.
 <img width="954" alt="3" src="https://github.com/user-attachments/assets/beb7af01-0a90-4191-b6c5-ac8025205e4d">
 <img width="954" alt="4" src="https://github.com/user-attachments/assets/e23e0fe9-f020-4676-a9b4-740680805609">
 <img width="954" alt="5" src="https://github.com/user-attachments/assets/f9459dc3-b37a-4915-8e95-df967ee1a06e">
-<img width="954" alt="6" src="https://github.com/user-attachments/assets/af6a98dd-c460-47aa-883c-a4b20f9ddeae">
-<img width="954" alt="7" src="https://github.com/user-attachments/assets/88fb7eea-0df7-4603-90b6-f3043071fbf5">
+<img width="954" alt="6" src="https://github.com/user-attachments/assets/ce2ab59e-2cef-45eb-9baa-0a68c950fcde">
+<img width="954" alt="7" src="https://github.com/user-attachments/assets/786af94d-15ec-465c-b632-1ae409cbdeae">
 <img width="954" alt="8" src="https://github.com/user-attachments/assets/219f03cf-b720-4790-96e0-986149e734d7">
 <img width="954" alt="9" src="https://github.com/user-attachments/assets/68ea361f-42fa-479c-b526-af5fe0781845">
 <img width="954" alt="10" src="https://github.com/user-attachments/assets/b0aab317-55c7-4ab0-bd68-caacc3d10aae">
