@@ -18,7 +18,7 @@ namespace Library_Management_System.Controllers
         };
 
 
-        // Encryption
+        // Encryption.
         private readonly IDataProtector _dataProtector;
 
         public AuthController(IDataProtectionProvider dataProtectionProvider)
